@@ -16,11 +16,19 @@
     <div class="col-lg-4 offset-lg-4">
         <div class="card">
             <div class="card-body">
-                <label for="">Informe a URL para gerar o Qr Code</label>
-                <input type="url" name="url" id="url" class="form-control" placeholder="https://google.com">
-                <button type="button" class="btn btn-info mt-3" id="enviar">GERAR QR CODE</button>
-                <img width="100%" src="/assets/demo.png" class="img-fluid" alt="" id="qr">
-                <button class="btn btn-info" id="download">Fazer download</button>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <label for="">Informe a URL para gerar o Qr Code</label>
+                        <input type="url" name="url" id="url" class="form-control" placeholder="https://google.com">
+                        <button type="button" class="btn btn-info mt-3" id="enviar">GERAR QR CODE</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <img width="100%" src="/assets/LOGO-DINAMUS.png" class="img-fluid" alt="Logo" id="qr">
+                    </div>
+                </div>
+                <button class="btn btn-info" id="download" style="display: none;">Fazer download</button>
             </div>
         </div>
         <div class="alert alert-danger mt-3" style="display: none;">
