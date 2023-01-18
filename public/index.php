@@ -23,12 +23,12 @@
                         <button type="button" class="btn btn-info mt-3" id="enviar">GERAR QR CODE</button>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row mt-3 mb-3">
                     <div class="col-lg-12">
                         <img width="100%" src="/assets/LOGO-DINAMUS.png" class="img-fluid" alt="Logo" id="qr">
                     </div>
                 </div>
-                <button class="btn btn-info mt-3 mb-3" id="download" style="display: none;">Fazer download</button>
+                <button class="btn btn-info" id="download" style="display: none;">Fazer download</button>
             </div>
         </div>
         <div class="alert alert-danger mt-3" style="display: none;">
