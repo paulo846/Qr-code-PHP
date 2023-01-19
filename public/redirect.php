@@ -12,7 +12,7 @@
         <meta http-equiv="refresh" content="10; url=<?= $_GET['site'] ?>">
     <?php endif; ?>
 
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.min.css">
 </head>
 
 <body>
