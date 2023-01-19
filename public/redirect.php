@@ -6,7 +6,7 @@ $file = "../assets/text/acessos-" . date('Y-m-d') . ".txt";
 
 $ip = $_SERVER['REMOTE_ADDR'];
 
-$content = date('H:i:s') . " - " . $_POST['url'] . "-" . $ip . "\n";
+$content = date('H:i:s') . " - " . $_POST['url'] . " IP:" . $ip . "\n";
 
 if (file_exists($file)) {
     //echo "O arquivo já existe.";
