@@ -2,7 +2,7 @@
 // Armazena a url enviada no POST
 $data = BASE_URL . 'redirect.php?site=' . $_POST['url'];
 
-$file = "assets/text/acessos-" . date('Y-m-d') . ".txt";
+$file = "../assets/text/acessos-" . date('Y-m-d') . ".txt";
 
 $ip = $_SERVER['REMOTE_ADDR'];
 
@@ -53,12 +53,13 @@ if (file_exists($file)) {
     <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
 
     <?php if (isset($_GET['site'])) : ?>
-    <script>
-        // Define a data final para a contagem regressiva
-        var countDownDate = new Date().getTime() + 10000; //10 segundos
-        var redirectUrl = "<?= $_GET['site'] ?>"; // URL para redirecionamento
-    </script>
-    <script src="assets/js/redirect.min.js"></script>
-    <?php endif ; ?>
+        <script>
+            // Define a data final para a contagem regressiva
+            var countDownDate = new Date().getTime() + 10000; //10 segundos
+            var redirectUrl = "<?= $_GET['site'] ?>"; // URL para redirecionamento
+        </script>
+        <script src="assets/js/redirect.min.js"></script>
+    <?php endif; ?>
 </body>
+
 </html>

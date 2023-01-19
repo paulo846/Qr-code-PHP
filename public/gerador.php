@@ -27,7 +27,7 @@ if (isset($_POST['url'])) {
         // Armazena a url enviada no POST
         $data = BASE_URL . 'redirect.php?site=' . $_POST['url'];
 
-        $file = "assets/text/gerado-" . date('Y-m-d') . ".txt";
+        $file = "../assets/text/gerado-" . date('Y-m-d') . ".txt";
 
         $ip = $_SERVER['REMOTE_ADDR'];
 
