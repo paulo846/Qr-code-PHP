@@ -1,4 +1,9 @@
 <?php
+
+if (isset($_GET['site'])) :
+
+define('BASE_URL', 'https://qrcode.dinamusdigital.com/');
+
 // Armazena a url enviada no POST
 $data = BASE_URL . 'redirect.php?site=' . $_POST['url'];
 
@@ -15,6 +20,7 @@ if (file_exists($file)) {
     file_put_contents($file, $content);
 }
 
+endif ;
 
 ?>
 <!doctype html>
@@ -38,10 +44,10 @@ if (file_exists($file)) {
     <div class="container">
         <div class="row">
             <div class="">
+                <?php include('anuncio.php') ; ?>
                 <!-- Contador -->
                 <h3 class="text-center contador">
                     Você será redirecionado em
-
                     <div id="countdown-container">
                         <div id="countdown">9s</div>
                     </div>
@@ -50,6 +56,7 @@ if (file_exists($file)) {
             </div>
         </div>
     </div>
+
     <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
 
     <?php if (isset($_GET['site'])) : ?>
