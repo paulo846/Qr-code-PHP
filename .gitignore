@@ -1,3 +1,9 @@
+# PASTA DE PACOTES
 /vendor
 
+# ARQUIVOS DE DESENVOLVIMENTO QUE PODE OCUPAR ESPAÇO NO SERVIDOR SEM NECESSIDADE
 /public/assets/js/geral.js
+/public/assets/js/redirect.js
+
+/public/assets/css/style.css
+/public/assets/css/style.scss

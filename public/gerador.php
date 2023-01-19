@@ -1,5 +1,7 @@
 <?php
 
+
+
 /**
  * Script para gerar QR Code a partir de uma URL enviada via método POST.
  * Utiliza a biblioteca chillerlan/qrcode para gerar o QR Code.
@@ -12,6 +14,7 @@
 
 // Define o tipo de conteúdo da resposta como JSON
 header('Content-Type: application/json');
+define('BASE_URL', 'https://qrcode.dinamusdigital.com/');
 
 // Faz o include do autoloader do Composer
 require_once "../vendor/autoload.php";
@@ -24,11 +27,11 @@ use chillerlan\QRCode\QROptions;
 if (isset($_POST['url'])) {
     try {
         // Armazena a url enviada no POST
-        $data = $_POST['url'];
+        $data = BASE_URL .'/redirect?site='. $_POST['url'];
 
         // Cria as opções para a geração do QRCode
         $options = new QROptions([
-            'version'  => 6, //versão do QRCode
+            'version'  => 10, //versão do QRCode
             'eccLevel' => QRCode::ECC_L, // Nível de correção de erro L
             'escala'   => 500, // Tamanho da imagem gerada
             'errorCorrectionLevel' => 'H' // Nível de correção de erro H
