@@ -27,7 +27,7 @@ use chillerlan\QRCode\QROptions;
 if (isset($_POST['url'])) {
     try {
         // Armazena a url enviada no POST
-        $data = BASE_URL .'/redirect?site='. $_POST['url'];
+        $data = BASE_URL .'redirect.php?site='. $_POST['url'];
 
         // Cria as opções para a geração do QRCode
         $options = new QROptions([
