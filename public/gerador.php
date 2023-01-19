@@ -1,7 +1,5 @@
 <?php
 
-
-
 /**
  * Script para gerar QR Code a partir de uma URL enviada via método POST.
  * Utiliza a biblioteca chillerlan/qrcode para gerar o QR Code.
@@ -27,7 +25,23 @@ use chillerlan\QRCode\QROptions;
 if (isset($_POST['url'])) {
     try {
         // Armazena a url enviada no POST
-        $data = BASE_URL .'redirect.php?site='. $_POST['url'];
+        $data = BASE_URL . 'redirect.php?site=' . $_POST['url'];
+
+        $file = "assets/text/" . date('Y-m-d') . ".txt";
+
+        $content = date('H:i:s') . " - " . $_POST['url'] . "\n";
+
+        if (file_exists($file)) {
+            //echo "O arquivo já existe.";
+
+            file_put_contents($file, $content, FILE_APPEND);
+        
+        } else {
+
+            file_put_contents($file, $content);
+
+        }
+
 
         // Cria as opções para a geração do QRCode
         $options = new QROptions([
