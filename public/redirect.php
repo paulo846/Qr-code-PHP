@@ -2,25 +2,25 @@
 
 if (isset($_GET['site'])) :
 
-define('BASE_URL', 'https://qrcode.dinamusdigital.com/');
+    define('BASE_URL', 'https://qrcode.dinamusdigital.com/');
 
-// Armazena a url enviada no POST
-$data = BASE_URL . 'redirect.php?site=' . $_POST['url'];
+    // Armazena a url enviada no POST
+    $data = BASE_URL . 'redirect.php?site=' . $_POST['url'];
 
-$file = "../assets/text/acessos-" . date('Y-m-d') . ".txt";
+    $file = "../assets/text/acessos-" . date('Y-m-d') . ".txt";
 
-$ip = $_SERVER['REMOTE_ADDR'];
+    $ip = $_SERVER['REMOTE_ADDR'];
 
-$content = date('H:i:s') . " - " . $_POST['url'] . " IP:" . $ip . "\n";
+    $content = date('H:i:s') . " - " . $_POST['url'] . " IP:" . $ip . "\n";
 
-if (file_exists($file)) {
-    //echo "O arquivo já existe.";
-    file_put_contents($file, $content, FILE_APPEND);
-} else {
-    file_put_contents($file, $content);
-}
+    if (file_exists($file)) {
+        //echo "O arquivo já existe.";
+        file_put_contents($file, $content, FILE_APPEND);
+    } else {
+        file_put_contents($file, $content);
+    }
 
-endif ;
+endif;
 
 ?>
 <!doctype html>
@@ -34,7 +34,7 @@ endif ;
     <!-- Bootstrap CSS v5.2.1 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <?php if (isset($_GET['site'])) : ?>
-        <meta http-equiv="refresh" content="5; url=<?= $_GET['site'] ?>">
+
     <?php endif; ?>
 
     <link rel="stylesheet" href="assets/css/style.min.css">
@@ -44,12 +44,12 @@ endif ;
     <div class="container">
         <div class="row">
             <div class="">
-                <?php include('anuncio.php') ; ?>
+                <?php include('anuncio.php'); ?>
                 <!-- Contador -->
                 <h3 class="text-center contador">
-                    Você será redirecionado em
+                    Aguarde!!
                     <div id="countdown-container">
-                        <div id="countdown">9s</div>
+                        <div id="countdown">6s</div>
                     </div>
                     segundos
                 </h3>
@@ -62,10 +62,29 @@ endif ;
     <?php if (isset($_GET['site'])) : ?>
         <script>
             // Define a data final para a contagem regressiva
-            var countDownDate = new Date().getTime() + 10000; //10 segundos
-            var redirectUrl = "<?= $_GET['site'] ?>"; // URL para redirecionamento
+            var countDownDate =  new Date().getTime() + 5000; //10 segundos
+            const redireciona = "<?php echo $_GET['site'] ; ?>"; // URL para redirecionamento
+
+            $(document).ready(() => {
+                function redireciona() {
+                    window.location.href = redireciona;
+                }
+                setInterval(() => {
+                    // Pega a data e hora atual
+                    var now = new Date().getTime();
+                    // Calcula a distância entre agora e a data final
+                    var distance = countDownDate - now;
+                    // Calcula o tempo restante em segundos
+                    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                    // Exibe o tempo restante na tela
+                    $("#countdown").text(seconds + "s ");
+                    if (distance <= 0) {
+                        clearInterval();
+                        redireciona();
+                    }
+                }, 1000);
+            })
         </script>
-        <script src="assets/js/redirect.min.js?time=<?= uniqid() ?>"></script>
     <?php endif; ?>
 </body>
 
