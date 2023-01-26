@@ -25,9 +25,9 @@ use chillerlan\QRCode\QROptions;
 if (isset($_POST['url'])) {
     try {
         // Armazena a url enviada no POST
-        //$data = BASE_URL . 'redirect.php?site=' . $_POST['url'];
+        $data = BASE_URL . 'redirect.php?site=' . $_POST['url'];
 
-        $data = $_POST['url'];
+        //$data = $_POST['url'];
 
 
         $file = "../assets/text/gerado-" . date('Y-m-d') . ".txt";
