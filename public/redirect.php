@@ -63,12 +63,8 @@ endif;
         <script>
             // Define a data final para a contagem regressiva
             var countDownDate =  new Date().getTime() + 5000; //10 segundos
-            const redirecionar = "<?php echo $_GET['site'] ; ?>"; // URL para redirecionamento
 
             $(document).ready(() => {
-                function redireciona() {
-                    window.location.href = redirecionar;
-                }
                 setInterval(() => {
                     // Pega a data e hora atual
                     var now = new Date().getTime();
@@ -79,9 +75,8 @@ endif;
                     // Exibe o tempo restante na tela
                     $("#countdown").text(seconds + "s ");
                     if (distance <= 0) {
-                    $("#countdown").text("0s ");
-                        clearInterval();
-                        redireciona();
+                    $("#countdown").text("Redirecionando...");
+                        window.location.href = "<?php echo $_GET['site'] ; ?>";
                     }
                 }, 1000);
             })
