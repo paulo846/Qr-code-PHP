@@ -25,9 +25,9 @@ use chillerlan\QRCode\QROptions;
 if (isset($_POST['url'])) {
     try {
         // Armazena a url enviada no POST
-        $data = BASE_URL . 'redirect.php?site=' . $_POST['url'];
+        //$data = BASE_URL . 'redirect.php?site=' . $_POST['url'];
 
-        //$data = $_POST['url'];
+        $data = $_POST['url'];
 
 
         $file = "../assets/text/gerado-" . date('Y-m-d') . ".txt";
@@ -46,7 +46,7 @@ if (isset($_POST['url'])) {
 
         // Cria as opções para a geração do QRCode
         $options = new QROptions([
-            'version'  => 10, //versão do QRCode
+            'version'  => 6, //versão do QRCode
             'eccLevel' => QRCode::ECC_L, // Nível de correção de erro L
             'escala'   => 500, // Tamanho da imagem gerada
             'errorCorrectionLevel' => 'H' // Nível de correção de erro H
