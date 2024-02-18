@@ -6,8 +6,15 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Gerador de Qr Code">
+
     <!-- Bootstrap CSS v5.2.1 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
 
     <style>
         body {
@@ -42,12 +49,12 @@
                     <b>Qr code gerado com sucesso</b>
                 </div>
             </div>
-            
+
             <?php include('anuncio.php'); ?>
 
             <div class="row mt-3 mb-3">
                 <div class="col-lg-12 text-center">
-                    <img width="250px" src="/assets/img/LOGO-DINAMUS.png" class="img-fluid" alt="Logo" id="qr">
+                    <img width="250px" src="/assets/img/dev.gif" class="img-fluid" alt="Logo" id="qr">
                 </div>
             </div>
             <div class="d-grid gap-2">
