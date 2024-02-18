@@ -42,6 +42,7 @@
                     <b>Qr code gerado com sucesso</b>
                 </div>
             </div>
+            
             <?php include('anuncio.php'); ?>
 
             <div class="row mt-3 mb-3">
