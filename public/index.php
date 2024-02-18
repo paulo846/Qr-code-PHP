@@ -54,7 +54,7 @@
 
             <div class="row mt-3 mb-3">
                 <div class="col-lg-12 text-center">
-                    <img width="250px" src="/assets/img/dev.gif" class="img-fluid" alt="Logo" id="qr">
+                    <img width="250px" src="/assets/img/dev.gif" class="img-fluid" alt="Logo" id="qr" style="border-radius: 10px;">
                 </div>
             </div>
             <div class="d-grid gap-2">
