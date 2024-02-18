@@ -1,3 +1,4 @@
+
 <?php
 
 if (isset($_GET['site'])) :
@@ -5,13 +6,13 @@ if (isset($_GET['site'])) :
     define('BASE_URL', 'https://qrcode.dinamusdigital.com/');
 
     // Armazena a url enviada no POST
-    $data = BASE_URL . 'redirect.php?site=' . $_POST['url'];
+    $data = BASE_URL . 'redirect.php?site=' . $_GET['site'];
 
     $file = "../assets/text/acessos-" . date('Y-m-d') . ".txt";
 
     $ip = $_SERVER['REMOTE_ADDR'];
 
-    $content = date('H:i:s') . " - " . $_POST['url'] . " IP:" . $ip . "\n";
+    $content = date('H:i:s') . " - " . $_GET['site'] . " IP:" . $ip . "\n";
 
     if (file_exists($file)) {
         //echo "O arquivo já existe.";
